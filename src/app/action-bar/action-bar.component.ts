@@ -8,20 +8,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './action-bar.component.css',
 })
 export class ActionBarComponent {
-  counter = 0;
   @Input() step: number = 1;
-  @Output() numberChange = new EventEmitter();
+  @Input() counter: number = 0;
+  @Output() counterChange = new EventEmitter();
 
   handleDecrease() {
     if (this.counter > 0) {
       this.counter -= this.step;
-      this.numberChange.emit(this.counter);
+      this.counterChange.emit(this.counter);
     }
   }
   handleIncrease() {
     if (this.counter < 100) {
       this.counter += this.step;
-      this.numberChange.emit(this.counter);
+      this.counterChange.emit(this.counter);
     }
   }
 }

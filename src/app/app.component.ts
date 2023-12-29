@@ -12,7 +12,7 @@ import { SquareFlexComponent } from './square-flex/square-flex.component';
     CommonModule,
     RouterOutlet,
     ActionBarComponent,
-    MaxMinMeterComponent,
+    // MaxMinMeterComponent,
     SquareFlexComponent,
   ],
   templateUrl: './app.component.html',
@@ -24,6 +24,9 @@ export class AppComponent {
   appMaxLabel = 'myAppMaxLabel';
   squareHeigh = 100;
   squarewidth = 250;
+
+  appCounter = 20;
+
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
   }
