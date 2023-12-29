@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ActionBarComponent } from './action-bar/action-bar.component';
 import { MaxMinMeterComponent } from './max-min-meter/max-min-meter.component';
+import { SquareFlexComponent } from './square-flex/square-flex.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { MaxMinMeterComponent } from './max-min-meter/max-min-meter.component';
     RouterOutlet,
     ActionBarComponent,
     MaxMinMeterComponent,
+    SquareFlexComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -20,6 +22,8 @@ export class AppComponent {
   value = 0;
   appMinLabel = 'myAppMinLabel';
   appMaxLabel = 'myAppMaxLabel';
+  squareHeigh = 100;
+  squarewidth = 250;
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
   }
@@ -34,5 +38,24 @@ export class AppComponent {
 
   doAppMaxChange(value: number) {
     console.log('test maxchange event', value);
+  }
+
+  set100Width() {
+    this.squarewidth = 100;
+  }
+  set300Width() {
+    this.squarewidth = 300;
+  }
+  set500Width() {
+    this.squarewidth = 500;
+  }
+  set100Hight() {
+    this.squareHeigh = 100;
+  }
+  set300Hight() {
+    this.squareHeigh = 300;
+  }
+  set500Hight() {
+    this.squareHeigh = 500;
   }
 }
