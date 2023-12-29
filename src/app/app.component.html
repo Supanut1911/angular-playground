@@ -7,7 +7,7 @@
 </div>
 <span>each one = {{ value }} </span> -->
 
-<app-action-bar
+<!-- <app-action-bar
   (numberChange)="testNumberChange($event)"
   [step]="5"
 ></app-action-bar>
@@ -15,4 +15,10 @@
   (numberChange)="testNumberChange($event)"
   [step]="10"
 ></app-action-bar>
-<app-action-bar></app-action-bar>
+<app-action-bar></app-action-bar> -->
+<app-max-min-meter
+  [minLabel]="appMinLabel"
+  [maxLabel]="appMaxLabel"
+  (maxChange)="doAppMinChange($event)"
+  (minChange)="doAppMaxChange($event)"
+></app-max-min-meter>
