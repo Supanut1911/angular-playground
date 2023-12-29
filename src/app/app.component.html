@@ -54,11 +54,13 @@
 
 <button (click)="activate = true">activate</button> -->
 
-{{ customerList[1] }}
-
 <ul>
-  <li *ngFor="let customer of customerList">{{ customer }}</li>
+  <li *ngFor="let customer of customerList; let i = index">
+    {{ customer }}<button (click)="handelRemoveCustomer(i)">remove</button>
+  </li>
 </ul>
 
-<button (click)="handelPushCustomer()">push</button>
-<button (click)="handelUnshiftCustomer()">unshift</button>
+<div>
+  <button (click)="handelPushCustomer()">push</button>
+  <button (click)="handelUnshiftCustomer()">unshift</button>
+</div>

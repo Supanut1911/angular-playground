@@ -73,4 +73,8 @@ export class AppComponent {
   handelUnshiftCustomer() {
     this.customerList.unshift(`customer  ${this.customerList.length + 1}`);
   }
+
+  handelRemoveCustomer(index: number) {
+    this.customerList.splice(index, 1);
+  }
 }
