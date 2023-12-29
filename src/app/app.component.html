@@ -1,14 +1,8 @@
-<div>Hello world This is my title {{ title }}</div>
-<div>Dogo boy = {{ dogName }}</div>
+Buffet 4, pay 3
 <div>
-  <button type="button" (click)="greetDogo()">bark</button>
+  <input #priceBuffetInput type="text" placeholder="buffet per one" />
+  <button (click)="handleCalculateBuffet(priceBuffetInput.value)">
+    calculate
+  </button>
 </div>
-<div>
-  <button type="button" (click)="changDogoName('Lucky')">changDogoName</button>
-</div>
-<div>
-  <button type="button" (click)="changDogoName('Happy')">changDogoName2</button>
-</div>
-<div>
-  <button type="button" (click)="changDogoName('Zoe')">changDogoName3</button>
-</div>
+<span>each one = {{ value }} </span>

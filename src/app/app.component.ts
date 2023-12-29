@@ -10,15 +10,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'my-proj';
-  dogName = 'Laika';
+  value = 0;
 
-  greetDogo() {
-    alert('hong');
-    console.log(`${this.dogName} bark`);
-  }
-
-  changDogoName(dogName: string) {
-    this.dogName = dogName;
+  handleCalculateBuffet(priceBuffetInput: string) {
+    this.value = (+priceBuffetInput * 3) / 4;
   }
 }
