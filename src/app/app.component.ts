@@ -29,7 +29,7 @@ export class AppComponent {
 
   appCounter = 20;
 
-  customerList: string[] = ['cat', 'bat', 'rat', 'zat'];
+  customerList: string[] = ['customer1', 'customer2', 'customer3', 'customer4'];
 
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
@@ -64,5 +64,13 @@ export class AppComponent {
   }
   set500Hight() {
     this.squareHeigh = 500;
+  }
+
+  handelPushCustomer() {
+    this.customerList.push(`customer  ${this.customerList.length + 1}`);
+  }
+
+  handelUnshiftCustomer() {
+    this.customerList.unshift(`customer  ${this.customerList.length + 1}`);
   }
 }
