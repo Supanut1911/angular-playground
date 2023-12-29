@@ -7,6 +7,12 @@
 </div>
 <span>each one = {{ value }} </span> -->
 
-<app-action-bar [step]="5"></app-action-bar>
-<app-action-bar [step]="10"></app-action-bar>
+<app-action-bar
+  (numberChange)="testNumberChange($event)"
+  [step]="5"
+></app-action-bar>
+<app-action-bar
+  (numberChange)="testNumberChange($event)"
+  [step]="10"
+></app-action-bar>
 <app-action-bar></app-action-bar>

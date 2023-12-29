@@ -16,4 +16,8 @@ export class AppComponent {
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
   }
+
+  testNumberChange(value: number) {
+    console.log('test number change from app action bar', value);
+  }
 }
