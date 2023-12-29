@@ -41,5 +41,11 @@
   <button type="button" (click)="set500Hight()">500px</button>
 </div> -->
 
-<app-action-bar [(counter)]="appCounter" [step]="10"></app-action-bar>
-<app-square-flex [divWidth]="appCounter"></app-square-flex>
+<!-- <app-action-bar
+  [(counter)]="appCounter"
+  [step]="10"
+></app-action-bar>
+<app-square-flex [divWidth]="appCounter"></app-square-flex> -->
+
+<app-action-bar *ngIf="activate"></app-action-bar>
+<button (click)="activate = true">activate</button>

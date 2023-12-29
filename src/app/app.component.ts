@@ -25,6 +25,8 @@ export class AppComponent {
   squareHeigh = 100;
   squarewidth = 250;
 
+  activate = false;
+
   appCounter = 20;
 
   handleCalculateBuffet(priceBuffetInput: string) {
