@@ -29,6 +29,8 @@ export class AppComponent {
 
   appCounter = 20;
 
+  customerList: string[] = ['cat', 'bat', 'rat', 'zat'];
+
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
   }
