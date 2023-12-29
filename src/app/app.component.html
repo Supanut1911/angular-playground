@@ -47,5 +47,9 @@
 ></app-action-bar>
 <app-square-flex [divWidth]="appCounter"></app-square-flex> -->
 
-<app-action-bar *ngIf="activate"></app-action-bar>
+<app-action-bar *ngIf="activate; else esleTemplate"></app-action-bar>
+<ng-template #esleTemplate>
+  <div>activate now</div>
+</ng-template>
+
 <button (click)="activate = true">activate</button>
