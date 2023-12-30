@@ -54,7 +54,7 @@
 
 <button (click)="activate = true">activate</button> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let customer of customerList; let i = index">
     {{ customer }}<button (click)="handelRemoveCustomer(i)">remove</button>
   </li>
@@ -63,4 +63,12 @@
 <div>
   <button (click)="handelPushCustomer()">push</button>
   <button (click)="handelUnshiftCustomer()">unshift</button>
+</div> -->
+
+<div>
+  <label>name:</label><input type="text" #myNameInputText />
+  <button (click)="searchBookList(myNameInputText.value)">search</button>
+</div>
+<div *ngFor="let book of bookList">
+  {{ book.name }}
 </div>

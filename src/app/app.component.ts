@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ActionBarComponent } from './action-bar/action-bar.component';
 import { MaxMinMeterComponent } from './max-min-meter/max-min-meter.component';
 import { SquareFlexComponent } from './square-flex/square-flex.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TestRequestModule } from './test-request/test-request.module';
+import { Book } from './test-request/test-request-get/book.type';
 
 @Component({
   selector: 'app-root',
@@ -14,22 +17,29 @@ import { SquareFlexComponent } from './square-flex/square-flex.component';
     ActionBarComponent,
     // MaxMinMeterComponent,
     SquareFlexComponent,
+    HttpClientModule,
+    TestRequestModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   value = 0;
   appMinLabel = 'myAppMinLabel';
   appMaxLabel = 'myAppMaxLabel';
   squareHeigh = 100;
   squarewidth = 250;
-
   activate = false;
 
   appCounter = 20;
 
   customerList: string[] = ['customer1', 'customer2', 'customer3', 'customer4'];
+
+  constructor(private http: HttpClient) {}
+
+  bookList: Book[] = [];
+
+  ngOnInit(): void {}
 
   handleCalculateBuffet(priceBuffetInput: string) {
     this.value = (+priceBuffetInput * 3) / 4;
@@ -76,5 +86,15 @@ export class AppComponent {
 
   handelRemoveCustomer(index: number) {
     this.customerList.splice(index, 1);
+  }
+
+  searchBookList(keyword: string) {
+    this.http
+      .get<Book[]>(
+        `https://www.anapioficeandfire.com/api/books?name=` + keyword
+      )
+      .subscribe((response) => {
+        this.bookList = response;
+      });
   }
 }
