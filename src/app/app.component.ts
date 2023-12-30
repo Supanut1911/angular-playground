@@ -98,6 +98,8 @@ export class AppComponent implements OnInit {
         `https://www.anapioficeandfire.com/api/books?name=` + keyword
       )
       .subscribe((response) => {
+        console.log('response =>', response);
+
         this.bookList = response;
       });
   }
