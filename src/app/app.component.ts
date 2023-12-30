@@ -7,7 +7,8 @@ import { SquareFlexComponent } from './square-flex/square-flex.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestRequestModule } from './test-request/test-request.module';
 import { Book } from './test-request/test-request-get/book.type';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,12 +20,15 @@ import { Book } from './test-request/test-request-get/book.type';
     SquareFlexComponent,
     HttpClientModule,
     TestRequestModule,
+    InputTextModule,
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   value = 0;
+  value2 = 'hi primeNG';
   appMinLabel = 'myAppMinLabel';
   appMaxLabel = 'myAppMaxLabel';
   squareHeigh = 100;

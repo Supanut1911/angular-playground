@@ -65,10 +65,17 @@
   <button (click)="handelUnshiftCustomer()">unshift</button>
 </div> -->
 
-<div>
+<!-- <div>
   <label>name:</label><input type="text" #myNameInputText />
   <button (click)="searchBookList(myNameInputText.value)">search</button>
 </div>
 <div *ngFor="let book of bookList">
   {{ book.name }}
+</div> -->
+
+<div style="margin: 50px">
+  <span class="p-float-label">
+    <input pInputText id="username" [(ngModel)]="value2" />
+    <label for="username">Username</label>
+  </span>
 </div>
